@@ -1,11 +1,17 @@
 class Number:
-	def __init__(self, number = ""):
-		if not number == "":
-			match number:
-				case int() | float():
-					self.number = number
-				case _:
-					print("Number is not Int nor Float")
+	def __init__(self, number = None):
+		try:
+			self.number = float(number)
+			try:
+				self.number = int(number)
+			except:
+				self.number = float(number)
+				#print("Number is not Int nor Float")
+		except:
+			self.number = None
+			if isinstance(self.number, int): pass
+			else: print("Number is not Int nor Float")
+
 
 	def printNumber(self):
 		print(self.number)
@@ -13,9 +19,22 @@ class Number:
 	def getNumber(self):
 		return self.number
 
-	def setNumber(self, number):
-		match number:
+	def isNumber(self):
+		match self.number:
 			case int() | float():
-				self.number = number
+				return True;
 			case _:
-				print("Number is not Int nor Float")
+				return False;
+
+	def setNumber(self, number):
+		try:
+			self.number = float(number)
+			try:
+				self.number = int(number)
+			except:
+				self.number = float(number)
+				#print("Number is not Int nor Float")
+		except:
+			self.number = None
+			if isinstance(self.number, int): pass
+			else: print("Number is not Int nor Float")
