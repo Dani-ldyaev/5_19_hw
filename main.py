@@ -1,8 +1,13 @@
 import numpy as np
-choice = int(input('Что вы хотите сделать? 1 - Разность, 2 - Деление, 3 - Сложение, 4 - Умножение, 5 - Квадратный корень'))
-x = int(input('x: '))
+import config
 
-y = int(input('y: '))
+print(config.APP_NAME)
+
+choice = int(input('Что вы хотите сделать? 1 - Разность, 2 - Деление, 3 - Сложение, 4 - Умножение, 5 - Квадратный корень'))
+
+x = int(input("x: "))
+
+y = int(input("y: "))
 
 match choice:
     case 1:
